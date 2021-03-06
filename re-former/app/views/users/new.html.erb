@@ -1,0 +1,32 @@
+<!-- <form action="/users" method="post" accept-charset="UTF-8">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label>Username:</label>
+  <input type="text" name="user[username]"><br />
+  <label>Email:</label>
+  <input type="text" name="user[email]"><br />
+  <label>Password:</label>
+  <input type="password" name="user[password]"><br />
+  <label>Confirm Password:</label>
+  <input type="password" name="user[password_confirmation]"><br />
+  <input type="submit" name="Create User">
+</form> -->
+
+<!-- <%= form_tag(users_path, method: "post") do %>
+  <%= label_tag :username, "Username:" %>
+  <%= text_field_tag :username %>
+  <%= label_tag :email, "Email:" %>
+  <%= text_field_tag :email %>
+  <%= label_tag :password, "Password:" %>
+  <%= password_field_tag :password %>
+  <%= label_tag :password_confirmation, "Confirm Password:" %>
+  <%= password_field_tag :password_confirmation %>
+  <%= submit_tag "Create User" %>
+<% end -%> -->
+
+<%= form_for @user do |f| -%>
+  Username:<%= f.text_field :username, placeholder: "Username here" %><br />
+  Email:<%= f.text_field :email %><br />
+  Password:<%= f.password_field :password %><br />
+  Confirm Password:<%= f.password_field :password_confirmation %><br />
+  <%= f.submit %>
+<% end -%>
